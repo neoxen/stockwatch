@@ -1,5 +1,13 @@
 Stockwatch::Application.routes.draw do
-  root "watchlist/index"
+  # resources :stocks
+
+  scope :api do
+    resources :stocks, defaults: {format: :json}
+    # only enable the 'index' action, disabled other actions such as 'delete' or 'edit'
+    # resources :stocks, only: [:index], defaults: {format: :json}
+  end
+
+  root "watchlist#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
