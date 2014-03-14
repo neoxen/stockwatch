@@ -4,6 +4,9 @@
     <input type="text" ng-model='newSymbol' placeholder="Enter a symbol">
     <input type="submit" value="Add">
   </form>
+  <div ng-show="loading" id="loading">
+    <img src="/assets/loading.gif" />Loading, please wait!
+  </div>
   <div ng-show="error">
     There was a problem with the Yahoo Finance API. Please try again later.
   </div>
